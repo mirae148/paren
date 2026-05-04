@@ -27,7 +27,7 @@ def filter_notes_by_date(keyword):
 
 def main():
     global notes
-    print("📅 Календарь с заметками")
+    print("📅 Календарь с заметками TATARIN2010")
     while True:
         print("\nМеню:")
         print("1. Проверить високосный год")
