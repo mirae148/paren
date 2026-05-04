@@ -2,6 +2,9 @@ def is_leap_year(year):
     return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
 
 def get_weekday_name_ru(day_number):
+
+    """Принимает номер дня недели (1=пн ... 7=вс) и возвращает название"""
+
     days = {
         1: "Понедельник",
         2: "Вторник",
@@ -12,6 +15,7 @@ def get_weekday_name_ru(day_number):
         7: "Воскресенье"
     }
     return days.get(day_number, "Неверный номер")
+
 
 def days_in_month(month, year=2000):  # year по умолчанию для високосности
     """Возвращает количество дней в месяце (1-12) с учётом года"""
@@ -28,7 +32,10 @@ def main():
         print("\nВыберите действие:")
         print("1. Проверить год на високосность")
         print("2. Узнать день недели по номеру")
+
         print("3. Количество дней в месяце")
+        print("3. Узнать количество дней в месяце")
+
         print("4. Создать заметку на день")
         print("5. Выйти")
         
@@ -39,6 +46,7 @@ def main():
             break
         elif choice == "1":
             year = int(input("Введите год: "))
+
             print("Високосный" if is_leap_year(year) else "Не високосный")
         elif choice == "2":
             num = int(input("Номер дня (1-7): "))
@@ -52,5 +60,19 @@ def main():
         else:
             print("Неверный ввод")
 
+            if is_leap_year(year):
+                print(f"Год {year} — високосный (366 дней)")
+            else:
+                print(f"Год {year} — не високосный (365 дней)")
+        elif choice == "2":
+            num = int(input("Введите номер дня недели (1-7, где 1=пн, 7=вс): "))
+            print(f"День: {get_weekday_name_ru(num)}")
+        elif choice == "3":
+            print("(Функция 3 будет добавлена позже)")
+        elif choice == "4":
+            print("(Функция 4 будет добавлена позже)")
+        else:
+            print("Неверный ввод, попробуйте снова")
+            
 if __name__ == "__main__":
     main()
