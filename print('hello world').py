@@ -1,4 +1,9 @@
 def is_leap_year(year):
+
+    """Возвращает True, если год високосный"""
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+
+
     return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
 
 def get_weekday_name_ru(day_number):
@@ -96,16 +101,21 @@ def main():
 
 if __name__ == "__main__":
     main()
-=======
+
 def main():
     print("Добро пожаловать в Календарь-помощник!")
     while True:
         print("\nВыберите действие:")
         print("1. Проверить год на високосность")
+
+        print("2. Узнать день недели по названию")
+        print("3. Узнать количество дней в месяце")
+
         print("2. Узнать день недели по номеру")
 
         print("3. Количество дней в месяце")
         print("3. Узнать количество дней в месяце")
+
 
         print("4. Создать заметку на день")
         print("5. Выйти")
@@ -117,6 +127,8 @@ def main():
             break
         elif choice == "1":
             year = int(input("Введите год: "))
+
+
 
             print("Високосный" if is_leap_year(year) else "Не високосный")
         elif choice == "2":
@@ -131,19 +143,28 @@ def main():
         else:
             print("Неверный ввод")
 
+
             if is_leap_year(year):
                 print(f"Год {year} — високосный (366 дней)")
             else:
                 print(f"Год {year} — не високосный (365 дней)")
         elif choice == "2":
+
+            print("(Функция 2 будет добавлена позже)")
+
             num = int(input("Введите номер дня недели (1-7, где 1=пн, 7=вс): "))
             print(f"День: {get_weekday_name_ru(num)}")
+
         elif choice == "3":
             print("(Функция 3 будет добавлена позже)")
         elif choice == "4":
             print("(Функция 4 будет добавлена позже)")
         else:
             print("Неверный ввод, попробуйте снова")
-            
+
+
 if __name__ == "__main__":
     main()
+if __name__ == "__main__":
+    main()
+
